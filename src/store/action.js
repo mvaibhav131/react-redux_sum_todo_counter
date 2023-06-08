@@ -16,9 +16,9 @@ export const resetCounter = (payload) => ({
     payload
 });
 
-export const addTodo = (payload) => ({
+export const addTodo = async (payload) => ({
     type: ADD_TODO,
-    payload
+    payload,
 });
 
 export const getTodos = async (dispatch) => {
