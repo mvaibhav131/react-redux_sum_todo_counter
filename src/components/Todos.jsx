@@ -15,8 +15,7 @@ const Todos = () => {
     if(isError) return <div>Error Occured while getting data</div>
     return (
         <div>
-            
-      Todos:{data.length},
+          <p style={{color:"blue" , fontSize:"27px"}}>Todos:{data.length}</p>
       <div>
          <TodoInput/>
       </div>
