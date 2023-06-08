@@ -15,4 +15,4 @@ const Todo = ({ id, value }) => {
   )
 }
 
-export default Todo
+export default Todo;
