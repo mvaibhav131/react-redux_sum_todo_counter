@@ -21,4 +21,4 @@ const TodoInput = () => {
   )
 }
 
-export default TodoInput
+export default TodoInput;
