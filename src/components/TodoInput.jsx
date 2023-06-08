@@ -2,21 +2,30 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuid } from "uuid";
 import { addTodo } from '../store/action';
+import { Input, Button } from '@chakra-ui/react';
+import axios from "axios";
 
 const TodoInput = () => {
     const [title, setTitle] = useState("");
     const dispatch = useDispatch();
-    const handleAdd = () => {
-        const payloaad = {
-            id: uuid(),
-            title,
+    const handleAdd =async () => {
+      window.location.reload()
+      let data = await axios.post("http://localhost:8080/todos", {
+        id: uuid(),
+        value: title,
+       }, {
+        headers: {
+          'Content-Type': 'application/json'
         }
-        dispatch(addTodo(payloaad));
-    }
-  return (
+      });
+      dispatch(addTodo(data))
+
+  }
+
+  return ( 
     <div>
-          <input placeholder='Add Todo' value={title} onChange={(e)=>setTitle(e.target.value)} />
-          <button onClick={handleAdd}>Add Todo</button>
+          <Input placeholder='Add Todo' m={"55px"} width={"266px"} value={title} onChange={(e)=>setTitle(e.target.value)} />
+      <Button colorScheme='blue' ml={"6px"} onClick={handleAdd}>Add Todo</Button>
     </div>
   )
 }
