@@ -18,7 +18,7 @@ const TodoInput = () => {
           'Content-Type': 'application/json'
         }
       });
-      dispatch(addTodo(data))
+      // dispatch(addTodo(data))
 
   }
 
