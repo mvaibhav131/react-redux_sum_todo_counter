@@ -8,6 +8,6 @@ const initialState = {
         isError: false,
         data:[],
     },
-};
+}; 
 
 export const store= createStore(reducer,initialState)
